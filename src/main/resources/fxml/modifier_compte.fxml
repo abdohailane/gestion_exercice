@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.ModifierCompteController"
+      spacing="15">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+
+    <!-- Titre -->
+    <Label text="Modifier mon compte" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+    <!-- Champ pour l'email -->
+    <Label text="Nouvel email:" />
+    <TextField fx:id="emailField" />
+
+    <!-- Champ pour le mot de passe -->
+    <Label text="Nouveau mot de passe:" />
+    <PasswordField fx:id="passwordField" />
+
+    <!-- Bouton pour soumettre les modifications -->
+    <Button text="Enregistrer" onAction="#handleSubmit" />
+
+    <!-- Bouton pour retourner à la page précédente -->
+    <Button text="Retour" onAction="#handleBack" />
+</VBox>

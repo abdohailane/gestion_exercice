@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import utils.DatabaseConnection;
 
@@ -88,5 +89,22 @@ public class LoginController {
     private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR, message, ButtonType.OK);
         alert.showAndWait();
+    }
+    @FXML
+    private void ouvrirCreationCompte() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/creer_compte.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Créer un compte");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL); // Rendre la fenêtre modale
+            stage.showAndWait();
+
+        } catch (Exception e) {
+            showAlert("Erreur lors de l'ouverture de la page de création de compte: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 }

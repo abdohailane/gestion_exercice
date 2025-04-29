@@ -20,5 +20,7 @@
     <Button text="Mes Exercices" onAction="#ouvrirMesExercices"/> <!-- nouveau bouton ajouté ici -->
     <!-- Nouveau bouton pour accéder à Mes Solutions -->
     <Button text="Mes Solutions" onAction="#ouvrirMesSolutions" style="-fx-background-color: #FFC107; -fx-text-fill: black;" />
+    <!-- Nouveau bouton pour modifier le compte -->
+    <Button text="Modifier mon compte" onAction="#ouvrirModifierCompte" style="-fx-background-color: #9C27B0; -fx-text-fill: white;" />
 
 </VBox>

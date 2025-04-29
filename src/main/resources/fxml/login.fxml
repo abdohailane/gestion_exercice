@@ -16,4 +16,6 @@
     <ComboBox fx:id="roleComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
     <Button text="Se connecter" onAction="#handleLogin" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.halignment="RIGHT"/>
+    <!-- Nouveau bouton pour créer un compte -->
+    <Button text="Créer un compte" onAction="#ouvrirCreationCompte" style="-fx-background-color: #2196F3; -fx-text-fill: white;" />
 </GridPane>

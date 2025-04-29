@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import models.Matiere;
 import utils.DatabaseConnection;
@@ -192,6 +193,25 @@ public class ChoixMatiereController {
 
         } catch (Exception e) {
             handleException(e, "Erreur lors de l'ouverture de la page Mes Solutions");
+        }
+    }
+    @FXML
+    private void ouvrirModifierCompte() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/modifier_compte.fxml"));
+            Parent root = loader.load();
+
+            ModifierCompteController controller = loader.getController();
+            controller.setCreateurId(createurId);
+
+            Stage stage = new Stage();
+            stage.setTitle("Modifier mon compte");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+
+        } catch (IOException e) {
+            handleException(e, "Erreur lors de l'ouverture de la page de modification du compte");
         }
     }
 
